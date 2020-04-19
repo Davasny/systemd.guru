@@ -4,7 +4,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --ignore-path .gitignore --write .",
     "lint": "eslint --ignore-path .gitignore \"**/*.{ts,tsx,js}\"",
     "serve": "gatsby serve",
@@ -26,9 +26,11 @@
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-typescript": "^2.3.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
+    "javascript-natural-sort": "^0.7.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0-beta.2",
+    "react-syntax-highlighter": "^12.2.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {

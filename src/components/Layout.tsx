@@ -16,7 +16,7 @@ export function Layout({ children }: LayoutProps): JSX.Element {
     <React.StrictMode>
       <Box
         minH='calc(100% - 75px - 80px)'
-        padding='36px'
+        padding={["10px", "10px", "36px"]}
         maxW='1440px'
         marginLeft='auto'
         marginRight='auto'

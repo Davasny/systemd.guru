@@ -19,10 +19,12 @@ export default {
 // second definition of colors due to problems with TS
 export const customTheme = {
   light: {
+    strongText: '#000',
     subText: '#727272',
     subTitle: '#05042D'
   },
   dark: {
+    strongText: '#FFF',
     subText: '#9a9a9a',
     subTitle: '#b5ab64'
   }
