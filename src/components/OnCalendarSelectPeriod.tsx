@@ -11,7 +11,7 @@ interface Pair {
 
 // function that changes 1,2,3 to 1..3 and etc
 const parsePeriods = (periods: Array<string>, step: number): Array<Pair> => {
-  const collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
+  const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
 
   const periodsSorted = periods.map((x: string) => {
     return parseInt(x, 10);
@@ -54,9 +54,16 @@ const createSystemdString = (periods: Array<Pair> | undefined): string => {
   return '*';
 };
 
-const CustomCheckbox: React.FC = (props) => (
-  <Checkbox name={props.field.name} {...props}/>
-);
+const CustomCheckbox: React.FC = (props) => {
+  const { colorMode } = useColorMode();
+  return (
+    <Checkbox
+      name={props.field.name}
+      {...props}
+      variantColor={colorMode === 'light' ? 'gray' : 'darkCheckbox'}
+    />
+  );
+};
 
 
 const OnCalendarSelectPeriod: React.FC = (props) => {
@@ -119,7 +126,6 @@ const OnCalendarSelectPeriod: React.FC = (props) => {
                   position="relative"
                   name={fieldName}
                   value={item}
-                  variantColor="gray"
                   onChange={handleCheckbox}
                   isChecked={values[fieldName].includes(item)}
                 >{item === '*' ? 'all' : item}</FastField>
