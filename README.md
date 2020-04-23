@@ -2,6 +2,9 @@
 
 A Gatsby starter with strict linting and auto-formatting rules.
 
+## Help needed
+I'm not nodejs/front/anything developer so feel free to commit piece of good code
+
 ## 🚀 Getting started
 
 - Clone this project and install all the required dependencies _(e.g. with `npx gatsby new gatsby-example-site https://github.com/kripod/gatsby-starter-strict`)_
