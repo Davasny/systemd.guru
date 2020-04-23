@@ -1,6 +1,7 @@
 import { Box, Checkbox, CheckboxGroup, FormControl, FormLabel, Input, useColorMode } from '@chakra-ui/core';
 import { FastField, useFormikContext } from 'formik';
 import React from 'react';
+import Scrollbar from 'react-scrollbars-custom';
 
 import { customTheme } from '../gatsby-plugin-chakra-ui/theme';
 
@@ -117,25 +118,28 @@ const OnCalendarSelectPeriod: React.FC = (props) => {
           borderWidth="1px"
           padding="3px"
         >
-          <CheckboxGroup spacing={2} maxH="200px" overflowY="auto">
-            {possibleValues[fieldName].map((item) => (
-              <label htmlFor={`${fieldName}_${item}`}>
-                <FastField
-                  component={CustomCheckbox}
-                  key={`${fieldName}_${item}`}
-                  position="relative"
-                  name={fieldName}
-                  value={item}
-                  onChange={handleCheckbox}
-                  isChecked={values[fieldName].includes(item)}
-                >{item === '*' ? 'all' : item}</FastField>
-              </label>
-            ))}
-          </CheckboxGroup>
+          <Scrollbar style={{ height: 200 }} native={false}>
+            <CheckboxGroup spacing={2}>
+              {possibleValues[fieldName].map((item) => (
+                <label htmlFor={`${fieldName}_${item}`}>
+                  <FastField
+                    component={CustomCheckbox}
+                    key={`${fieldName}_${item}`}
+                    position="relative"
+                    name={fieldName}
+                    value={item}
+                    onChange={handleCheckbox}
+                    isChecked={values[fieldName].includes(item)}
+                  >{item === '*' ? 'all' : item}</FastField>
+                </label>
+              ))}
+            </CheckboxGroup>
+          </Scrollbar>
         </Box>
       </FormControl>
     </Box>
-  );
+  )
+    ;
 };
 
 

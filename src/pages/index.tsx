@@ -5,17 +5,17 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Link,
+  Text,
   useColorMode,
-  Flex,
-  Link, Text,
 } from '@chakra-ui/core/dist';
 import React, { useState } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { railscasts, docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { Layout } from '../components/Layout';
 import OnCalendar from '../components/OnCalendar';
 import { customTheme } from '../gatsby-plugin-chakra-ui/theme';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco, a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const codeString = `[Unit]
 Description=aaa
@@ -74,7 +74,7 @@ export default function IndexPage(): JSX.Element {
           <SyntaxHighlighter
             // w="100%"
             language="ini"
-            style={(colorMode === 'light') ? docco : a11yDark}
+            style={(colorMode === 'light') ? docco : railscasts}
             showLineNumbers
           >
             {codeString}
@@ -90,7 +90,7 @@ export default function IndexPage(): JSX.Element {
           ml={['0px', '0px', '4px']}
           mr={['0px', '0px', '4px']}
         >
-          <SyntaxHighlighter language="ini" style={(colorMode === 'light') ? docco : a11yDark} showLineNumbers>
+          <SyntaxHighlighter language="ini" style={(colorMode === 'light') ? docco : railscasts} showLineNumbers>
             {codeString}
           </SyntaxHighlighter>
         </Box>
@@ -100,8 +100,8 @@ export default function IndexPage(): JSX.Element {
         color={customTheme[colorMode].strongText}
         mt="10px"
       >
-        <Box ml="auto" mr="auto"><Link href="https://github.com/Davasny/systemd.guru" isExternal>github</Link></Box>
         <Box ml="auto" mr="auto"><Link href="https://www.freedesktop.org/software/systemd/man/systemd.timer.html" isExternal>man</Link></Box>
+        <Box ml="auto" mr="auto"><Link href="https://github.com/Davasny/systemd.guru" isExternal>github</Link></Box>
         <Box ml="auto" mr="auto"><Text>inspired by <Link href="https://crontab.guru" isExternal>crontab.guru</Link></Text></Box>
       </Box>
     </Layout>
