@@ -116,6 +116,7 @@ const OnCalendarSelectPeriod: React.FC = (props) => {
                 <FastField
                   component={CustomCheckbox}
                   key={`${fieldName}_${item}`}
+                  position="relative"
                   name={fieldName}
                   value={item}
                   variantColor="gray"
