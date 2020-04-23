@@ -18,6 +18,7 @@ Description=${values.unitDesc}
 [Service]
 Type=oneshot
 User=${values.unitUser}
+ExecStart="${values.unitCommand}"
 
 [Install]
 WantedBy=timers.target`
